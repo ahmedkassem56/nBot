@@ -1,0 +1,128 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{D63AAF53-2EAB-4600-AC87-A9DEB47625D7}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>nBot</RootNamespace>
+    <AssemblyName>nBot</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkProfile>Client</TargetFrameworkProfile>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Analyzer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Analyzer.designer.cs">
+      <DependentUpon>Analyzer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Bot Logic\Analyzer.cs" />
+    <Compile Include="Bot Logic\Attack.cs" />
+    <Compile Include="Bot Logic\Buff.cs" />
+    <Compile Include="Captcha.cs" />
+    <Compile Include="Proxy\Agent.cs" />
+    <Compile Include="Proxy\Clientless_Agent.cs" />
+    <Compile Include="Proxy\Clientless_Gateway.cs" />
+    <Compile Include="Data\BotData.cs" />
+    <Compile Include="Data\Character.cs" />
+    <Compile Include="Data\Item.cs" />
+    <Compile Include="Data\Monster.cs" />
+    <Compile Include="Data\Skill.cs" />
+    <Compile Include="Files\TxtFiles.cs" />
+    <Compile Include="Login.cs" />
+    <Compile Include="PacketHandler\AgentHandler.cs" />
+    <Compile Include="PacketHandler\GatewayHandler.cs" />
+    <Compile Include="Packets\Buff.cs" />
+    <Compile Include="Packets\CharData.cs" />
+    <Compile Include="Packets\Spawn.cs" />
+    <Compile Include="Packets\Status.cs" />
+    <Compile Include="Proxy\Gateway.cs" />
+    <Compile Include="Proxy\Proxy.cs" />
+    <Compile Include="SilkroadSecurityApi\Blowfish.cs" />
+    <Compile Include="SilkroadSecurityApi\Packet.cs" />
+    <Compile Include="SilkroadSecurityApi\PacketReader.cs" />
+    <Compile Include="SilkroadSecurityApi\PacketWriter.cs" />
+    <Compile Include="SilkroadSecurityApi\Security.cs" />
+    <Compile Include="SilkroadSecurityApi\TransferBuffer.cs" />
+    <Compile Include="SilkroadSecurityApi\Utility.cs" />
+    <Compile Include="Globals.cs" />
+    <Compile Include="Loader.cs" />
+    <Compile Include="MainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainForm.Designer.cs">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Analyzer.resx">
+      <DependentUpon>Analyzer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainForm.resx">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
